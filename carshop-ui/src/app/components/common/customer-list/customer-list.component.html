@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+   
+    <body>
+      <br>
+
+      <div>
+        <table class="table table-striped table-bordered">
+          <tr style="background: rgb(99, 97, 252);">
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Recall Notice</th>
+                </tr>
+                <tr *ngFor = "let user of users">
+                  <td>{{user.id}}</td>
+                  <td>{{user.fname}}</td>
+                  <td>{{user.lname}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.username}}</td>
+                  <td>
+                    <button (click) = "getUsers()" class="btn btn-success"> Send Recall </button>
+                  </td>
+                </tr>
+
+        </table>
+      
+      </div>
+    </body>
+
+</html>

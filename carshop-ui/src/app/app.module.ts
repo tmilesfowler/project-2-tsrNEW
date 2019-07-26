@@ -17,6 +17,8 @@ import { HttpInterceptorService } from './interceptors/http-interceptor.service'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarEditComponent } from './components/common/car-edit/car-edit.component';
 import { CarService } from './services/car.service';
+import { CarCustomerComponent } from './components/common/car-customer/car-customer.component';
+import { CustomerListComponent } from './components/common/customer-list/customer-list.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { CarService } from './services/car.service';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    CarEditComponent
+    CarEditComponent,
+    CarCustomerComponent,
+    CustomerListComponent,
   ],
   imports: [
     BrowserModule,

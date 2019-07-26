@@ -52,6 +52,14 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/edit']);
   }
 
+  bypassCustomer(){
+    this.router.navigate(['/viewcars']);
+  }
+
+  bypassCuList(){
+    this.router.navigate(['/customerlist']);
+  }
+
   resetUser(){
     this.myUser.id = null;
     this.myUser.fname = null;
@@ -64,7 +72,7 @@ export class LoginComponent implements OnInit {
 
   login(username: string, password: string){
     this.resetUser;
-    
+
     username = this.userCh.nativeElement.value;
     password = this.passCh.nativeElement.value;
 
