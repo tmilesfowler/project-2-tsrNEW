@@ -52,7 +52,19 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/edit']);
   }
 
+  resetUser(){
+    this.myUser.id = null;
+    this.myUser.fname = null;
+    this.myUser.lname = null;
+    this.myUser.email = null;
+    this.myUser.username = null;
+    this.myUser.password = null;
+    this.myUser.role = null;
+  }
+
   login(username: string, password: string){
+    this.resetUser;
+    
     username = this.userCh.nativeElement.value;
     password = this.passCh.nativeElement.value;
 

@@ -26,7 +26,7 @@ public class UserDAOImpl implements UserDAO{
 	public List<User> getAllUsers(){
 		ArrayList<User> userList = new ArrayList<>();
 		Query query = sessionFact.getCurrentSession().createQuery("from User");
-		query.setMaxResults(3);
+		//query.setMaxResults(3);
 		userList = (ArrayList<User>) query.list();
 		System.out.println("list in dao "+ userList);
 		return userList;

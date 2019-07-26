@@ -55,7 +55,7 @@ Request(@RequestParam("dc1Servers") String dc1Servers, @RequestParam("dc2Servers
 	public User login(@RequestParam("user") String user, @RequestParam("pass") String pass) {
 		System.out.println("Attempting to Log: " + user + ", " + pass);
 		User u = us.validateUser(user, pass);
-		System.out.println("WELCOME " + u.toString());
+		//System.out.println("WELCOME " + u.toString());
 		return u;
 	}
 	
