@@ -70,6 +70,12 @@ public class UserServiceImpl implements UserService{
 	public void updateUser(User user) {
 		ud.addUser(user);
 	}
+	
+	@Override
+	@Transactional
+	public void sendReset(String email) {
+		ud.sendJMail(email);
+	}
 
 	
 }

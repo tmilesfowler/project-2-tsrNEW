@@ -48,9 +48,11 @@ public class UserController {
 		return u;
 	}
 	
-	/*@RequestMapping(value = "index", method = RequestMethod.GET)
-Request(@RequestParam("dc1Servers") String dc1Servers, @RequestParam("dc2Servers") String dc2Servers, 
-@RequestParam("dc3Servers") String dc3Servers)*/ 
+	@RequestMapping(value="/resetPassword/{email}", method=RequestMethod.GET)
+	public void reset(@PathVariable String email) {  //?
+		us.sendReset(email);
+	}
+	
 	@RequestMapping(value="/user", method=RequestMethod.GET)
 	public User login(@RequestParam("user") String user, @RequestParam("pass") String pass) {
 		System.out.println("Attempting to Log: " + user + ", " + pass);
@@ -58,21 +60,6 @@ Request(@RequestParam("dc1Servers") String dc1Servers, @RequestParam("dc2Servers
 		//System.out.println("WELCOME " + u.toString());
 		return u;
 	}
-	
-	/*@RequestMapping(value="mylogin", method=RequestMethod.GET)
-   public ModelAndView hello(@RequestParam("user") String username, @RequestParam("pass") String password) {
-       ModelAndView mv;
-       System.out.println("Name : " + username + " Password : " + password);
-       Users user = usersServiceImpl.validateUser(username, password);
-       if(user !=null){
-           mv = new ModelAndView("success");
-           mv.addObject("result", username);
-       } else {
-           mv = new ModelAndView("index1");
-           mv.addObject("msg", "Please Try Again");
-       }
-       return mv;
-   }*/
 	
 	@PostMapping("/users")
 	public User createUser(@RequestBody User user) {

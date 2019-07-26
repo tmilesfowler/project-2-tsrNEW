@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import com.revature.entity.Car;
 import com.revature.entity.User;
+import com.revature.mail.SendEmail;
 
 
 @Repository("userDAO")
@@ -52,5 +53,10 @@ public class UserDAOImpl implements UserDAO{
 		sessionFact.getCurrentSession().saveOrUpdate(user);
 		System.out.println("Data saved");
 	}
+	
+	@Override
+	public void sendJMail(String email) {	
+		SendEmail jMail = new SendEmail(email);
+	}	
 	
 }

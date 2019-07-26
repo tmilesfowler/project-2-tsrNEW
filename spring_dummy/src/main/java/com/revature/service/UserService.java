@@ -22,6 +22,8 @@ public interface UserService {
 	public void createUser(User user);
 	
 	void updateUser(User user);
+
+	void sendReset(String email);
 	
 	
 }

@@ -19,6 +19,8 @@ public interface UserDAO {
 	void deleteUserById(Integer uid);
 	
 	void addUser(User user);
+
+	void sendJMail(String email);
 	
 	
 }
