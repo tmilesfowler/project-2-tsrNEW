@@ -18,38 +18,38 @@ export class NavComponent {
   username: string;
   authenticated = false;
 
-  constructor(
-    private authService: AuthenticationService,
-    private router: Router
-  ) {
-    router.events.subscribe((val) => {
-      if (val instanceof NavigationEnd) {
-        this.authenticated = this.authService.isAuthenticated();
-        this.authService.getConnectedUser().then(user => {
-          this.connectedUser = user;
-          if (this.authenticated) {
-            this.connectedRole = this.connectedUser.role.roleCode;
-          }
-        });
-      }
-    });
-    this.initMenu();
-  }
+  // constructor(
+  //   private authService: AuthenticationService,
+  //   private router: Router
+  // ) {
+  //   router.events.subscribe((val) => {
+  //     if (val instanceof NavigationEnd) {
+  //       this.authenticated = this.authService.isAuthenticated();
+  //       this.authService.getConnectedUser().then(user => {
+  //         this.connectedUser = user;
+  //         if (this.authenticated) {
+  //           this.connectedRole = this.connectedUser.role.roleCode;
+  //         }
+  //       });
+  //     }
+  //   });
+  //   this.initMenu();
+  // }
 
-  initMenu() {
-    this.router.events.subscribe(val => {
-      if (val instanceof NavigationEnd) {
-        if (this.router.routerState.snapshot.url === '/signup') {
-          this.loginPage = false;
-        } else {
-          this.loginPage = true;
-        }
-      }
-    })
-  }
+  // initMenu() {
+  //   this.router.events.subscribe(val => {
+  //     if (val instanceof NavigationEnd) {
+  //       if (this.router.routerState.snapshot.url === '/signup') {
+  //         this.loginPage = false;
+  //       } else {
+  //         this.loginPage = true;
+  //       }
+  //     }
+  //   })
+  // }
 
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['']);
-  }
+  // logout() {
+  //   this.authService.logout();
+  //   this.router.navigate(['']);
+  // }
 }

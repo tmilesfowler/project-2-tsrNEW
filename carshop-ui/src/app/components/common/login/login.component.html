@@ -8,12 +8,12 @@
                 </mat-card-subtitle>
                 <br>
                 <mat-card-content>
-                    <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                    <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="login()" #loginForm="ngForm">
                         <mat-form-field>
-                            <input matInput formControlName="username" required placeholder="Username">
+                            <input #userCh matInput formControlName="username" required placeholder="Username">
                         </mat-form-field>
                         <mat-form-field>
-                            <input matInput formControlName="password" required type="password" placeholder="Password">
+                            <input #passCh matInput formControlName="password" required type="password" placeholder="Password">
                         </mat-form-field>
                         <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button
                             color="primary">Login</button>
@@ -23,7 +23,7 @@
                     <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
                     <br>
                     <hr>
-
+                    <p>{{myUser.fname}}</p>
                     <p><i>Don't have an Account?</i></p>
                     <button (click)="signup()" mat-button color="primary">Sign Up</button>
                     <button (click)="bypass()" mat-button color="primary">TEST BYPASS</button>

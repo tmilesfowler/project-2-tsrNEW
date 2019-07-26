@@ -1,58 +1,48 @@
-import { Account } from './Account';
-import { Role } from './Role';
 
 export class User {
-
-    id: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    account: Account;
-    role: Role;
-    bDate: Date;
-    gender: string;
-
-    constructor(id?: number, firstName?: string, lastName?: string, email?: string, account?: Account, role?: Role, bDate?: Date) {
-
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.account = account;
-        this.role = role;
-        this.bDate = bDate;
+    ​
+        id: number;
+        fname: string;
+        lname: string;
+        email: string;
+        username: string; 
+        password: string; 
+        role: string; 
+        
+    ​
+        constructor(id?: number, fname?: string, lname?: string, email?:string, username?: string, password?: string,role?:string) {
+    ​
+            this.id = id;
+            this.fname = fname;
+            this.lname = lname;
+            this.email = email;
+            this.username = username;
+            this.password = password;
+            this.role = role;
+        }
+    ​
+        getfname() {
+            return this.fname;
+        }
+    ​
+        getlname() {
+            return this.lname;
+        }
+    ​
+        getEmail() {
+            return this.email;
+        }
+    ​
+        getusername() {
+            return this.username;
+        }
+    ​
+        getPassword() {
+            return this.password;
+        }
+    ​
+        getRole() {
+            return this.role;
+        }
+    ​
     }
-
-    getFirstName() {
-        return this.firstName;
-    }
-
-    getLastName() {
-        return this.lastName;
-    }
-
-    getEmail() {
-        return this.email;
-    }
-
-    getAccount() {
-        return this.account;
-    }
-
-    getRole() {
-        return this.role;
-    }
-
-    getBDate() {
-        return this.bDate;
-    }
-
-    setAccount(ac: Account) {
-        this.account = ac;
-    }
-
-    setRole(rl: Role) {
-        this.role = rl;
-    }
-
-}
