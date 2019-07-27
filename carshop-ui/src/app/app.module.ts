@@ -19,6 +19,7 @@ import { CarEditComponent } from './components/common/car-edit/car-edit.componen
 import { CarService } from './services/car.service';
 import { CarCustomerComponent } from './components/common/car-customer/car-customer.component';
 import { CustomerListComponent } from './components/common/customer-list/customer-list.component';
+import { PasswordResetComponent } from './components/common/password-reset/password-reset.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CustomerListComponent } from './components/common/customer-list/custome
     CarEditComponent,
     CarCustomerComponent,
     CustomerListComponent,
+    PasswordResetComponent,
   ],
   imports: [
     BrowserModule,

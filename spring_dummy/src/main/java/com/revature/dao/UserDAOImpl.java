@@ -56,6 +56,7 @@ public class UserDAOImpl implements UserDAO{
 	
 	@Override
 	public void sendJMail(String email) {	
+		System.out.println("DAO sending to: " + email);
 		SendEmail jMail = new SendEmail(email);
 	}	
 	

@@ -50,6 +50,8 @@ public class UserController {
 	
 	@RequestMapping(value="/resetPassword/{email}", method=RequestMethod.GET)
 	public void reset(@PathVariable String email) {  //?
+		email += ".com";
+		System.out.println("sending to: " + email);
 		us.sendReset(email);
 	}
 	

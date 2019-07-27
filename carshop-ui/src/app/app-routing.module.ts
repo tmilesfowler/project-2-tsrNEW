@@ -6,6 +6,7 @@ import { LoginComponent } from './components/common/login/login.component';
 import { CarEditComponent } from './components/common/car-edit/car-edit.component';
 import { CarCustomerComponent } from './components/common/car-customer/car-customer.component';
 import { CustomerListComponent } from './components/common/customer-list/customer-list.component';
+import { PasswordResetComponent } from './components/common/password-reset/password-reset.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'edit', component: CarEditComponent },
   { path: 'viewcars', component: CarCustomerComponent },
   { path: 'customerlist', component: CustomerListComponent },
+  { path: 'resetPassword', component: PasswordResetComponent },
   { path: '**', redirectTo: '' }
  
 

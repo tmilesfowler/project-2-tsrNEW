@@ -74,6 +74,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	@Transactional
 	public void sendReset(String email) {
+		System.out.println("SERVICE sending to: " + email);
 		ud.sendJMail(email);
 	}
 

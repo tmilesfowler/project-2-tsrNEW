@@ -60,6 +60,14 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/customerlist']);
   }
 
+  bypassEmail(){
+    this.router.navigate(['/customerlist']);
+  }
+
+  bypassPassReset(){
+    this.router.navigate(['/resetPassword']);
+  }
+
   resetUser(){
     this.myUser.id = null;
     this.myUser.fname = null;
