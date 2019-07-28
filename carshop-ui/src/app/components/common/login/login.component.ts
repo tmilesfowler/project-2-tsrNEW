@@ -41,6 +41,8 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(64)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(32)])]
     });
+
+    this.resetUser;
   }
 
   signup() {
@@ -48,21 +50,17 @@ export class LoginComponent implements OnInit {
   }
 
   // //FOR TESTING PURPOSES
-  bypass(){
-    this.router.navigate(['/edit']);
-  }
+  // bypass(){
+  //   this.router.navigate(['/edit']);
+  // }
 
-  bypassCustomer(){
-    this.router.navigate(['/viewcars']);
-  }
+  // bypassCustomer(){
+  //   this.router.navigate(['/viewcars']);
+  // }
 
-  bypassCuList(){
-    this.router.navigate(['/customerlist']);
-  }
-
-  bypassEmail(){
-    this.router.navigate(['/customerlist']);
-  }
+  // bypassCuList(){
+  //   this.router.navigate(['/customerlist']);
+  // }
 
   bypassPassReset(){
     this.router.navigate(['/resetPassword']);
@@ -79,16 +77,28 @@ export class LoginComponent implements OnInit {
   }
 
   login(username: string, password: string){
-    this.resetUser;
 
     username = this.userCh.nativeElement.value;
     password = this.passCh.nativeElement.value;
+    
+    this._userService.logUser(username, password).subscribe((userData) => {
 
-    console.log("User info: " + username + " " + password);
+      sessionStorage.setItem("myUser", JSON.stringify(userData));
+
+      this.myUser = userData;
+
+      if(userData.role == "C"){
+        this.router.navigate(['/viewcars']);
+      }
+
+      else if(userData.role == "E"){
+        this.router.navigate(['/edit']);
+      }
+
+      }),
+
+      (error) => {console.log(error); this.statusMessage = "Problem with service"}   
     
-    this._userService.findByUsername(username, password).subscribe((userData) => {this.myUser = userData;}),
-    
-      (error) => {console.log(error); this.statusMessage = "Problem with service"}
   }
 
   // onSubmit() {
