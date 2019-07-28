@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
+import { User } from 'src/app/models/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-edit',
@@ -13,11 +15,18 @@ export class CarEditComponent implements OnInit {
 cars: Car[];
 statusMessage: string
 car = new Car();
+myUser = new User();
 
-  constructor(private _carService:CarService) {}
+  constructor(private _carService:CarService,  private router: Router) {}
 
   ngOnInit() {
     this.getCars();
+
+    this.myUser = JSON.parse(sessionStorage.getItem("myUser"));
+  }
+
+  customerList(){
+    this.router.navigate(['/customerlist']);
   }
 
   getCars():void{

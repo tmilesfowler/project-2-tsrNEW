@@ -23,13 +23,12 @@
                     <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
                     <br>
                     <hr>
-                    <p>{{myUser.fname}}</p>
                     <p><i>Don't have an Account?</i></p>
                     <button (click)="signup()" mat-button color="primary">Sign Up</button>
+                    <button (click)="bypassPassReset()" mat-button color="primary">Forgot Your Password?</button>
                     <button (click)="bypass()" mat-button color="primary">EMPLOYEE BYPASS</button>
                     <button (click)="bypassCustomer()" mat-button color="primary">CUSTOMER BYPASS</button>
                     <button (click)="bypassCuList()" mat-button color="primary">CU LIST BYPASS</button>
-                    <button (click)="bypassPassReset()" mat-button color="primary">PASS RESET BYPASS</button>
                 </mat-card-content>
             </mat-card>
         </div>

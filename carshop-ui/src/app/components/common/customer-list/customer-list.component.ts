@@ -8,6 +8,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { TokenService } from 'src/app/services/token.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/User';
+import { EmailService } from 'src/app/services/email.service';
 
 @Component({
   selector: 'app-login',
@@ -23,10 +24,15 @@ export class CustomerListComponent implements OnInit {
   returnUrl: string;
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
-  constructor(private _userService:UserService) {}
+  constructor(private _userService:UserService, private router: Router,
+    private _emailService:EmailService) {}
 
   ngOnInit() {
     this.getUsers();
+  }
+
+  carList(){
+    this.router.navigate(['/edit']);
   }
 
   resetUser(){

@@ -16,13 +16,13 @@ private http: HttpClient,
 private _httpService: HttpClient
   ) { }
 ​
-  findByUsername(username: string, password: string): Observable<any>{
+  logUser(username: string, password: string): Observable<any>{
     return this.http.get("http://localhost:8090/springCarShow/api/user?user=" + username + "&pass=" + password);
   }
 
-  // findByUsername(username: string): Observable<any>{
-  //   return this.http.get(this.url + '/username/' + username);
-  // }
+  findByUsername(username: string): Observable<any>{
+     return this.http.get(this.url + '/username/' + username);
+  }
 ​
   updateUser(user: User) {
     return this.http.put(this.url, user);
