@@ -39,8 +39,7 @@ public class SendEmail {
 			     message.setFrom(new InternetAddress(user));  
 			     message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
 			     message.setSubject("Reset Password");  
-			     message.setText("There is a request to reset your account password");  
-			       
+			     message.setText("There is a request to reset your account password");    
 			    //send the message  
 			     Transport.send(message);  
 			  

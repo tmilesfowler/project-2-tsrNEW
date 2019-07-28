@@ -1,4 +1,4 @@
-<ng-container class="font-small unique-color-dark pt-4">
+<ng-container class="font-small unique-color-dark pt-5">
   <mat-toolbar color="primary" *ngIf="authenticated">
     <a mat-button color="secondary" routerLink="home">
       <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
@@ -25,23 +25,28 @@
   </mat-toolbar>
 
   <mat-toolbar color="primary" *ngIf="!authenticated">
-
-    <a mat-button color="primary" routerLink="">
-      <mat-icon>home</mat-icon>&nbsp;
-      <span>Car shop application</span>
-    </a>
+    <a class="navbar-brand" href="">
+        <img src="https://project2tsr.s3.us-east-2.amazonaws.com/teamLogoModified.jpg" alt="Team Logo" style="width:200px;height:55px;">
+      </a>
 
     <span class="fill-remaining-space"></span>
-
-
     <a mat-button color="primary" routerLink="">
-      <!-- <mat-icon>home</mat-icon>&nbsp; -->
-      <span>Home</span>
-    </a>
+        <mat-icon>home</mat-icon>&nbsp;
+        <span>Home</span>
+      </a>
+      <a mat-button color="primary" routerLink="about">
+          <mat-icon>directions_car</mat-icon>&nbsp;
+          <span>About</span>
+        </a>
+        <a mat-button color="primary" routerLink="contact">
+            <mat-icon> forum</mat-icon>&nbsp;
+            <span>Contact</span>
+          </a>
+
 
     <button class="mat-button-menu" mat-button [matMenuTriggerFor]="authmenu">
-      <!-- <mat-icon>security</mat-icon> -->
-      <span>Sign in/up</span>
+      <mat-icon>security</mat-icon>
+      <span>Sign in</span>
     </button>
 
     <mat-menu #authmenu="matMenu">

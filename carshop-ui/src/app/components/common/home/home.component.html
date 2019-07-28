@@ -1,7 +1,17 @@
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img src="assets/images/car3.jpg" alt="Random third slide">
-    </div>
-  </ng-template>
-</ngb-carousel>
+<mdb-carousel [isControls]="true" class="carousel slide" [animation]="'slide'">
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="assets/images/pic 1.jpg" alt="First slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+        <img class="d-block w-100" src="assets/images/pic4.jpg" alt="Second slide">
+      </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="assets/images/pic2.jpg" alt="Third slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="assets/images/pic3.jpg" alt="Fourth slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+        <img class="d-block w-100" src="assets/images/pic5.jpg" alt="Fifth slide">
+      </mdb-carousel-item>
+  </mdb-carousel>
