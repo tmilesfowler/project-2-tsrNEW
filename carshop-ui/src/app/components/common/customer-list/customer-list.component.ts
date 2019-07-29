@@ -54,4 +54,14 @@ export class CustomerListComponent implements OnInit {
   );
   }
 
+  sendRecall(email: string):void{
+    this._emailService.sendRecall(email).subscribe((response) => {
+      console.log(response);
+    },
+    (error) => {
+      console.log(error);
+      this.statusMessage = "problem with service. Please try again later!";
+    })
+  }
+
 }

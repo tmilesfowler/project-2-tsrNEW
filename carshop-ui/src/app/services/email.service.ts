@@ -14,4 +14,11 @@ export class EmailService {
     return this._httpService.get("http://localhost:8090/springCarShow/api/resetPassword/" + emAddress);
     //return null;
   }
+
+  sendRecall(emAddress: string): Observable<any>{
+    console.log("sending recall to: " + emAddress);
+    return this._httpService.get("http://localhost:8090/springCarShow/api/recall/" + emAddress);
+    //return null;
+  }
+
 }

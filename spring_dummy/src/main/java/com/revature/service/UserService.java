@@ -25,6 +25,8 @@ public interface UserService {
 
 	void sendReset(String email);
 	
+	void sendRecall(String email);
+	
 	
 }
 

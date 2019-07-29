@@ -68,6 +68,12 @@ public class UserDAOImpl implements UserDAO{
 				
 		}
 		SendEmail jMail = new SendEmail(email, fPassword, null);
-	}	
+	}
+	
+	@Override
+	public void recallJMail(String email) {
+		//email = the dummy email
+		SendEmail recall = new SendEmail(email, null, "Recall");
+	}
 	
 }
