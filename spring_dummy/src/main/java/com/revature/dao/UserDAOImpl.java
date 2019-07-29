@@ -57,7 +57,17 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public void sendJMail(String email) {	
 		System.out.println("DAO sending to: " + email);
-		SendEmail jMail = new SendEmail(email);
+		List <User> lu= getAllUsers();
+		String fPassword = null;
+		
+		for(User user: lu) {
+			if(user.getEmail().equals(email)) {
+				System.out.println("Found user " + email);
+				fPassword = user.getPassword();
+			}
+				
+		}
+		SendEmail jMail = new SendEmail(email, fPassword, null);
 	}	
 	
 }
