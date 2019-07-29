@@ -49,19 +49,6 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/signup']);
   }
 
-  // //FOR TESTING PURPOSES
-  // bypass(){
-  //   this.router.navigate(['/edit']);
-  // }
-
-  // bypassCustomer(){
-  //   this.router.navigate(['/viewcars']);
-  // }
-
-  // bypassCuList(){
-  //   this.router.navigate(['/customerlist']);
-  // }
-
   bypassPassReset(){
     this.router.navigate(['/resetPassword']);
   }

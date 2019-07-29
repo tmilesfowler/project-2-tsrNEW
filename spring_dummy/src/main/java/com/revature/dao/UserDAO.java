@@ -22,5 +22,7 @@ public interface UserDAO {
 
 	void sendJMail(String email);
 	
+	void recallJMail(String email);
+	
 	
 }

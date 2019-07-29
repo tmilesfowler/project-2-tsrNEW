@@ -1,5 +1,6 @@
 package com.revature.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -21,8 +22,16 @@ public class UserServiceImpl implements UserService{
 	@Transactional
 	public List<User> listAllUsers(){
 		List <User> lu=ud.getAllUsers();
-		System.out.println("list in service: "+lu);
-		return lu;
+		List <User> customers = new ArrayList<User>();
+		
+		for(User user: lu) {
+			if(user.getRole().equals("C")) {
+				customers.add(user);
+			}
+		}
+		
+		System.out.println("list in service: "+ customers);
+		return customers;
 	}
 	
 	@Override
@@ -76,6 +85,12 @@ public class UserServiceImpl implements UserService{
 	public void sendReset(String email) {
 		System.out.println("SERVICE sending to: " + email);
 		ud.sendJMail(email);
+	}
+	
+	@Override
+	@Transactional
+	public void sendRecall(String email) {
+		ud.recallJMail(email);
 	}
 
 	
