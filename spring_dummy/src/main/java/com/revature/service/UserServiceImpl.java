@@ -77,6 +77,12 @@ public class UserServiceImpl implements UserService{
 		System.out.println("SERVICE sending to: " + email);
 		ud.sendJMail(email);
 	}
+	
+	@Override
+	@Transactional
+	public void sendRecall(String email) {
+		ud.recallJMail(email);
+	}
 
 	
 }

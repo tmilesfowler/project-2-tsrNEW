@@ -55,6 +55,13 @@ public class UserController {
 		us.sendReset(email);
 	}
 	
+	@RequestMapping(value="/recall/{email}", method=RequestMethod.GET)
+	public void recall(@PathVariable String email) {  //?
+		email += ".com";
+		System.out.println("sending to: " + email);
+		us.sendRecall(email);
+	}
+	
 	@RequestMapping(value="/user", method=RequestMethod.GET)
 	public User login(@RequestParam("user") String user, @RequestParam("pass") String pass) {
 		System.out.println("Attempting to Log: " + user + ", " + pass);
