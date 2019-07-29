@@ -18,10 +18,10 @@ export class NavComponent {
   username: string;
   authenticated = false;
 
-  // constructor(
-  //   private authService: AuthenticationService,
-  //   private router: Router
-  // ) {
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {};
   //   router.events.subscribe((val) => {
   //     if (val instanceof NavigationEnd) {
   //       this.authenticated = this.authService.isAuthenticated();
@@ -48,9 +48,9 @@ export class NavComponent {
   //   })
   // }
 
-  // logout() {
-  //   this.authService.logout();
-  //   this.router.navigate(['']);
-  // }
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['']);
+  }
 }
 
