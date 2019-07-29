@@ -72,7 +72,7 @@ public class UserDAOImpl implements UserDAO{
 	
 	@Override
 	public void recallJMail(String email) {
-		//email = the dummy email
+		email = "rev.receiver@gmail.com";
 		SendEmail recall = new SendEmail(email, null, "Recall");
 	}
 	

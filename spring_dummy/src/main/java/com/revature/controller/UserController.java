@@ -48,6 +48,12 @@ public class UserController {
 		return u;
 	}
 	
+	@RequestMapping(value="/deleteUser/{id}", method=RequestMethod.DELETE)
+	public void deleteUser(@PathVariable int id) {
+		System.out.println(id);
+		us.deleteUserbyId(id);
+	}
+	
 	@RequestMapping(value="/resetPassword/{email}", method=RequestMethod.GET)
 	public void reset(@PathVariable String email) {  //?
 		email += ".com";
